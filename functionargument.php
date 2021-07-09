@@ -15,13 +15,13 @@
     hellow("bagas",14);
     hellow("asdasd", 2);
 
-    function sumAll(array $val){
-        $total = 0;
-        foreach($val as $i){
-            $total += $i;
-        }
-        echo "Total = " . implode(",", $val) . " = $total" . PHP_EOL;
-    }
+    // function sumAll(array $val){
+    //     $total = 0;
+    //     foreach($val as $i){
+    //         $total += $i;
+    //     }
+    //     echo "Total = " . implode(",", $val) . " = $total" . PHP_EOL;
+    // }
 
     sumAll([1,2,3,4,5]);
 
