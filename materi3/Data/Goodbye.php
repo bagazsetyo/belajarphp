@@ -24,6 +24,35 @@ trait Hello{
     }
 }
 
-class Person{
-    use Goodbye, Hello;
+trait CanRun{
+    public abstract function run(): void;
+}
+
+class ParentPeron{
+    public function goodbye(?string $name)
+    {
+        echo "Goodbe in Person" . PHP_EOL;   
+    }
+
+    public function hello(?string $name)
+    {
+        echo "Hello in Person" . PHP_EOL;
+    }
+    
+}
+
+trait All{
+    use Goodbye, Hello, CanRun {
+        // hello as private;
+        // goodbye as private;
+    }
+}
+
+class Person extends ParentPeron{
+    use All;
+    public function run(): void
+    {
+        echo "Person $this->name is running" . PHP_EOL;
+    }
+
 }

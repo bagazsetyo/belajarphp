@@ -6,3 +6,8 @@
     $person = new Person();
     $person->goodbye("joki");
     $person->hello("joko");
+
+    $person->name = "EKO";
+    var_dump($person);
+
+    $person->run();
