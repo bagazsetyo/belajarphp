@@ -1,0 +1,27 @@
+{
+    "name": "programmer/bagaz",
+    "description": "belajar composer",
+    "type": "project",
+    "authors": [
+        {
+            "name": "bagaz",
+            "email": "bagazfrazetyo@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ProgrammerZamanNow\\" : "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/bagazsetyo/belajar-composer"
+        }
+    ],
+    "require": {
+        "php" : ">=8.0",
+        "bagazsetyo/belajar-composer" : "1.0.0",
+        "monolog/monolog" : "2.3.1"
+    }
+}

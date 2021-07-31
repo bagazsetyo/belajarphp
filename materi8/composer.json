@@ -1,0 +1,27 @@
+{
+    "name": "programmerzamannow/unit-test",
+    "description": "belajar unit test",
+    "type": "project",
+    "authors": [
+        {
+            "name": "bagaz",
+            "email": "bagazfrazetyo@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : ">=8"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "9.5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "ProgrammerZamanNow\\Test\\" : "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ProgrammerZamanNow\\Test\\" : "tests"
+        }
+    }
+}
