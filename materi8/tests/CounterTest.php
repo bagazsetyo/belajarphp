@@ -7,11 +7,25 @@ use PHPUnit\Framework\TestCase;
 
     class CounterTest extends TestCase{
 
+        
+        private Counter $counter;
+
+        protected function setUp():void
+        {
+            $this->counter = new Counter();
+            echo "Membuat Counter" . PHP_EOL;
+        }
+
         public function testCounter():void
         {
-            $counter = new Counter();
-            $counter->increment();
-            Assert::assertEquals(1, $counter->getCounter());
+            $this->counter->increment();
+            Assert::assertEquals(1, $this->counter->getCounter());
+        }
+
+        public function testIncrements()
+        {
+            self::assertEquals(0, $this->counter->getCounter());
+            self::markTestIncomplete("TODO do Counter again");
         }
 
         /** 
@@ -19,17 +33,16 @@ use PHPUnit\Framework\TestCase;
         */
         public function increment():void
         {
-            $counter = new Counter();
-            $counter->increment();
-            Assert::assertEquals(1, $counter->getCounter());
+            self::markTestSkipped("skiped");
+            $this->counter->increment();
+            Assert::assertEquals(1, $this->counter->getCounter());
         }
 
         public function testFirst(): Counter
         {
-            $counter = new Counter();
-            $counter->increment();
-            Assert::assertEquals(1, $counter->getCounter());
-            return $counter;
+            $this->counter->increment();
+            Assert::assertEquals(1, $this->counter->getCounter());
+            return $this->counter;
         }
         /**
          * @depends testFirst
@@ -38,5 +51,21 @@ use PHPUnit\Framework\TestCase;
         {
             $counter->increment();
             Assert::assertEquals(2, $counter->getCounter());
+        }
+
+        /**
+         * @after
+         */
+        public function tearDown():void
+        {
+            echo "Tear Down" . PHP_EOL;
+        }
+
+        /**
+         * @requires OSFAMILY Linux
+         */
+        public function testOnlyWindows()
+        {
+            self::assertTrue(true, "Only in windows");
         }
     }
